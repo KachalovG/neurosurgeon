@@ -1,0 +1,14 @@
+{
+  "name": "kirill-orlov-neurosurgeon-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/site.test.mjs",
+    "check": "node scripts/build.mjs && node --test tests/site.test.mjs"
+  }
+}

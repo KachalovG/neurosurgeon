@@ -1,0 +1,32 @@
+# Dependencies and caches
+node_modules/
+.cache/
+.tmp/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs, reports and archives
+*.log
+coverage/
+reports/
+*.zip
+*.tar
+*.tgz
+
+# Source documents are not website assets
+*.pdf
+*.ppt
+*.pptx
+*.doc
+*.docx
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

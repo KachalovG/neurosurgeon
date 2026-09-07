@@ -1,0 +1,18 @@
+{
+  "name": "Кирилл Орлов — нейрохирург",
+  "short_name": "Кирилл Орлов",
+  "description": "Эндоваскулярная нейрохирургия для взрослых и детей.",
+  "lang": "ru-RU",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f2ec",
+  "theme_color": "#10232c",
+  "icons": [
+    {
+      "src": "images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
