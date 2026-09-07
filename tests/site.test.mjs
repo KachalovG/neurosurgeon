@@ -74,6 +74,9 @@ test("mobile-specific copy is concise and secondary recognition text can be hidd
   assert.match(css, /\.copy-desktop\s*\{\s*display:\s*none/);
   assert.match(css, /\.recognition-lead\s*\{\s*display:\s*none/);
   assert.match(css, /width:\s*100vw/);
+  assert.match(css, /\.approach-content\s*\{[^}]*min-width:\s*0/);
+  assert.match(css, /\.step\s*\{[^}]*minmax\(0,\s*1fr\)/);
+  assert.match(css, /-webkit-text-size-adjust:\s*100%/);
 });
 
 test("verified publication links are present", async () => {
