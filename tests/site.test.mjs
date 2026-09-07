@@ -61,7 +61,19 @@ test("private source materials and removed contact details are absent", async ()
   assert.doesNotMatch(html, /href=["']tel:/i);
   assert.doesNotMatch(html, /\b112\b/);
   assert.doesNotMatch(html, /kirill-orlov-consultation/i);
+  assert.doesNotMatch(html, /mobile-actions|Написать врачу/i);
   assert.equal(allFiles.some((path) => /\.(?:env|pdf|pptx?|zip|tar|log)$/i.test(path)), false);
+});
+
+test("mobile-specific copy is concise and secondary recognition text can be hidden", async () => {
+  const html = await readFile(join(dist, "index.html"), "utf8");
+  const css = await readFile(join(dist, "css", "styles.css"), "utf8");
+
+  assert.match(html, /class="copy-mobile"/);
+  assert.match(html, /class="recognition-lead"/);
+  assert.match(css, /\.copy-desktop\s*\{\s*display:\s*none/);
+  assert.match(css, /\.recognition-lead\s*\{\s*display:\s*none/);
+  assert.match(css, /width:\s*100vw/);
 });
 
 test("verified publication links are present", async () => {
