@@ -86,6 +86,22 @@ test("verified publication links are present", async () => {
   }
 });
 
+test("mobile cards use restrained borders, touch-safe colors and reveal motion", async () => {
+  const html = await readFile(join(dist, "index.html"), "utf8");
+  const css = await readFile(join(dist, "css", "styles.css"), "utf8");
+  const javascript = await readFile(join(dist, "js", "main.js"), "utf8");
+
+  assert.equal((html.match(/data-reveal(?=[\s>])/g) ?? []).length, 18);
+  assert.match(css, /\.expertise-grid\s*\{[^}]*border-top:\s*1px solid var\(--line\)/);
+  assert.match(css, /\.credential-list\s*\{\s*border-top:\s*1px solid var\(--line\)/);
+  assert.match(css, /\.recognition-grid\s*\{[^}]*border-top:\s*1px solid var\(--line\)/);
+  assert.match(css, /\.faq-list\s*\{\s*border-top:\s*1px solid var\(--line\)/);
+  assert.match(css, /@media \(hover:\s*hover\) and \(pointer:\s*fine\)/);
+  assert.match(css, /\.step\s*\{\s*grid-template-columns:\s*54px minmax\(0, 1fr\);\s*gap:\s*18px/);
+  assert.match(javascript, /IntersectionObserver/);
+  assert.match(javascript, /classList\.add\("is-visible"\)/);
+});
+
 async function collectFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const nested = await Promise.all(entries.map(async (entry) => {
