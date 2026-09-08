@@ -91,7 +91,8 @@ test("mobile cards use restrained borders, touch-safe colors and reveal motion",
   const css = await readFile(join(dist, "css", "styles.css"), "utf8");
   const javascript = await readFile(join(dist, "js", "main.js"), "utf8");
 
-  assert.equal((html.match(/data-reveal(?=[\s>])/g) ?? []).length, 18);
+  assert.equal((html.match(/data-reveal(?=[\s>])/g) ?? []).length, 22);
+  assert.match(html, /class="credential-list" data-reveal-group/);
   assert.match(css, /\.expertise-grid\s*\{[^}]*border-top:\s*1px solid var\(--line\)/);
   assert.match(css, /\.credential-list\s*\{\s*border-top:\s*1px solid var\(--line\)/);
   assert.match(css, /\.recognition-grid\s*\{[^}]*border-top:\s*1px solid var\(--line\)/);
