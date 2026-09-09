@@ -239,8 +239,8 @@ footer { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 58px
   .recognition-section .section-heading h2 { font-size: clamp(34px, 9.2vw, 40px); }
   .route-title span { display: block; white-space: nowrap; }
 
-  .expertise-grid { grid-template-columns: 1fr; }
-  .expertise-card { min-height: 270px; padding: 28px; }
+  .expertise-grid { grid-template-columns: 1fr; border-left: 0; }
+  .expertise-card { min-height: 270px; padding: 28px; border-left: 1px solid var(--line); }
   .expertise-card h3 { margin-top: 36px; }
 
   .approach-section { grid-template-columns: 1fr; }
@@ -265,8 +265,8 @@ footer { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 58px
   .about-copy > .text-link { display: block; width: max-content; max-width: 100%; margin: 28px auto 0; text-align: center; }
 
   .numbers-title { margin-bottom: 42px; }
-  .numbers-grid { grid-template-columns: 1fr 1fr; }
-  .numbers-grid div { min-height: 190px; padding: 27px 20px; }
+  .numbers-grid { grid-template-columns: 1fr 1fr; border-left: 0; }
+  .numbers-grid div { min-height: 190px; padding: 27px 20px; border-left: 1px solid rgba(255,255,255,.18); }
   .numbers-grid span { margin-top: 34px; }
 
   .work-section { grid-template-columns: 1fr; gap: 0; padding-top: 64px; padding-bottom: 64px; }

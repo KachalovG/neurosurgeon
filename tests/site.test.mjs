@@ -97,6 +97,10 @@ test("mobile cards use restrained borders, touch-safe colors and reveal motion",
   assert.match(css, /\.credential-list\s*\{\s*border-top:\s*1px solid var\(--line\)/);
   assert.match(css, /\.recognition-grid\s*\{[^}]*border-top:\s*1px solid var\(--line\)/);
   assert.match(css, /\.faq-list\s*\{\s*border-top:\s*1px solid var\(--line\)/);
+  assert.match(css, /\.expertise-grid\s*\{\s*grid-template-columns:\s*1fr;\s*border-left:\s*0;/);
+  assert.match(css, /\.expertise-card\s*\{[^}]*border-left:\s*1px solid var\(--line\)/);
+  assert.match(css, /\.numbers-grid\s*\{\s*grid-template-columns:\s*1fr 1fr;\s*border-left:\s*0;/);
+  assert.match(css, /\.numbers-grid div\s*\{[^}]*border-left:\s*1px solid rgba\(255,255,255,\.18\)/);
   assert.match(css, /@media \(hover:\s*hover\) and \(pointer:\s*fine\)/);
   assert.match(css, /\.step\s*\{\s*grid-template-columns:\s*54px minmax\(0, 1fr\);\s*gap:\s*18px/);
   assert.match(javascript, /IntersectionObserver/);
